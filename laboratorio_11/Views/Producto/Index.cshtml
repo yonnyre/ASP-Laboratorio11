@@ -1,0 +1,80 @@
+﻿@model IEnumerable<laboratorio_11.Models.ProductoModel>
+
+<p>
+    @Html.ActionLink("Agregar producto", "AddProducto")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdProveedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadPorUnidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioUnidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadesEnExistencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadesEnPedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NivelNuevoPedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Suspendido)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdProveedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CantidadPorUnidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecioUnidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnidadesEnExistencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnidadesEnPedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NivelNuevoPedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Suspendido)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditProducto", new { id = item.IdProducto }) |
+            @Html.ActionLink("Delete", "DeleteProducto", new { id = item.IdProducto }, new { onclick = "return confirm('Desea eliminar el producto "+item.NombreProducto+"?')" })
+        </td>
+    </tr>
+}
+
+</table>
